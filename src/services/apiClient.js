@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const apiClient = axios.create({
-    baseURL: 'https://crudpark-csharp-back-1hes.onrender.com/',
+    baseURL: 'http://localhost:5047',
     headers: {
         'Content-Type': 'application/json'
     }

@@ -76,7 +76,7 @@ const isLoading = ref(false);
 const errorMessage = ref('');
 const successMessage = ref('');
 let modalInstance = null;
-const apiBaseUrl = '/configuracion/tarifas/catalogo'; // Apuntamos directamente al catálogo
+const apiBaseUrl = '/api/configuracion/tarifas/catalogo'; // Apuntamos directamente al catálogo
 
 const fetchData = async () => {
   isLoading.value = true; successMessage.value = ''; errorMessage.value = '';

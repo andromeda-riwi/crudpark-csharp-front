@@ -62,7 +62,7 @@ let modalInstance = null;
 const fetchOperators = async () => {
   isLoading.value = true; errorMessage.value = '';
   try {
-    const response = await apiClient.get('/Operadores');
+    const response = await apiClient.get('/api/Operadores');
     operators.value = response.data;
   } catch (error) { errorMessage.value = 'Error al cargar operadores.'; }
   finally { isLoading.value = false; }
@@ -82,7 +82,7 @@ const showEditModal = (op) => {
 
 const saveOperator = async () => {
   errorMessage.value = '';
-  const url = isEditing.value ? `/Operadores/${currentOperator.value.id}` : '/Operadores';
+  const url = isEditing.value ? `/api/Operadores/${currentOperator.value.id}` : '/api/Operadores';
   const method = isEditing.value ? 'put' : 'post';
 
   const requestBody = { ...currentOperator.value };
@@ -100,7 +100,7 @@ const saveOperator = async () => {
 const deleteOperator = async (id) => {
   if (!confirm('¿Estás seguro de que quieres eliminar este operador?')) return;
   try {
-    await apiClient.delete(`/Operadores/${id}`);
+    await apiClient.delete(`/api/Operadores/${id}`);
     await fetchOperators();
   } catch (error) {
     errorMessage.value = 'Error al eliminar el operador.';

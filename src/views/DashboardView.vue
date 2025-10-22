@@ -117,8 +117,8 @@ const fetchData = async () => {
   errorMessage.value = '';
   try {
     const [metricsRes, weeklyIncomeRes] = await Promise.all([
-      apiClient.get('/Dashboard/metrics'),
-      apiClient.get('/Dashboard/ingresos-semanales')
+      apiClient.get('/api/Dashboard/metrics'),
+      apiClient.get('/api/Dashboard/ingresos-semanales')
     ]);
 
     metrics.value = metricsRes.data;
